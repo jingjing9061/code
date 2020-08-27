@@ -50,15 +50,3 @@ let c = b.map((item,index)=>{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-

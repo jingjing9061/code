@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+
+		.parent {
+		  display: grid;
+		  place-items: center;   /*核心代码*/
+		 /* place-items: start;*/    /*左上角*/
+ 		 /* place-items: end;*/     /*右下角*/
+		  background: lightblue;
+		  width: 500px;
+		  height: 500px;
+		  
+		  resize: both;
+		  overflow: auto;
+		}
+		.child {
+		  // etc.
+		  padding: 0.5rem;
+		  border-radius: 10px;
+		  border: 1px solid red;
+		  background: lightpink;
+		  font-size: 2rem;
+		  text-align: center;
+		}
+
+		body {
+		  font-family: system-ui, serif;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="parent" >
+	  <div class="child" contenteditable>:)</div>
+	</div>
+
+	注：
+	核心代码是place-items属性那一行，它是一个简写形式。place-items: <align-items> <justify-items>;
+	左上角布局可以写成下面这样。place-items: start;
+
+
+	align-items属性控制垂直位置，justify-items属性控制水平位置。这两个属性的值一致时，就可以合并写成一个值。所以，place-items: center;等同于place-items: center center;
+	
+</body>
+</html>

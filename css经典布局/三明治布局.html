@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		body {
+			display: grid;
+			height: 100vh;
+			grid-template-rows: auto 1fr auto;
+		}
+
+		header {
+			background: lightpink;
+			padding: 2rem;
+		}
+
+		main {
+			background: #fdfde7;
+		}
+
+		footer {
+			height: 4rem;
+			background: wheat;
+			padding-left: 2rem;
+			text-align: center;
+		}
+
+
+	/*	上面代码写在容器上面，指定采用 Grid 布局。核心代码是grid-template-rows那一行，指定垂直高度怎么划分，这里是从上到下分成三部分。第一部分（页眉）和第三部分（页脚）的高度都为auto，即本来的内容高度；第二部分（内容区）的高度为1fr，即剩余的所有高度，这可以保证页脚始终在容器的底部。*/
+	
+	</style>
+</head>
+<body>
+
+
+	<header>
+		<h1>Header</h1>
+	</header><!-- /header -->
+	<main>
+		三明治布局指的是，页面在垂直方向上，分成三部分：页眉、内容区、页脚。
+		这个布局会根据设备宽度，自动适应，并且不管内容区有多少内容，页脚始终在容器底部（粘性页脚）。也就是说，这个布局总是会占满整个页面高度。
+	</main>
+	<footer>
+		Footer Content
+	</footer>
+
+
+
+
+
+
+</body>
+</html>
