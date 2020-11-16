@@ -4,12 +4,14 @@ function log(){
 
 
 
+
 //阶乘
-function fact(num) {
-       if (num <= 1) {
-                return 1;
-       } else {
-                return num * fact(num - 1);
-       }
+function fact(num){
+	if (num<=1) {
+		return 1
+	}else {
+		return num*fact(num-1)
+	}
 }
-log(fact(3)) // 结果为 6
+log(fact(3)) //6
+

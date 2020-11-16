@@ -44,16 +44,17 @@ Promise.all([getData1(),getData2()]).then(function (results) {
 
 
 /*～～～～～～～～～～～～～～～～～～～三async～～～～～～～～～～～～～～～～～～～～～～～～～～*/
-async asynhander() {
-	try{
-		let p1 = await getData1()
-		let p2 = await getData2()
-		let p3 = await getData3()
-	}catch(err){
-		console.log(err)
-	}
-}
-asynhander()
+// async function asynhander() {
+// 	try{
+// 		let p1 = await getData1()
+// 		let p2 = await getData2()
+// 		let p3 = await getData3()
+// 		console.log(p1,p2,p3)
+// 	}catch(err){
+// 		console.log(err)
+// 	}
+// }
+// asynhander()
 
 
 

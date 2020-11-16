@@ -3,6 +3,15 @@ function log(){
      console.log.apply(console,arguments);
 }
 
+/*
+    
+     定义是Object.values(obj)，obj 参数是对目标对象的操作，它可以是一个对象或者数组。
+     Object.entries方法返回一个给定对象可枚举属性值的数组[key, value]，与Object.values类似。
+
+*/
+
+
+
 let grade ={
 	'lilei':98,
 	'zhuzhu':78
