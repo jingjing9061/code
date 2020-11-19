@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>节流</title>
+	<style type="text/css">
+		div {
+			height: 30px;
+			background-color: rgba(17,27,37,0.1);
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	
+</body>
+<script type="text/javascript">
+	/*
+	原理： 设置canRun作为是否执行的标志。每次触发onresize，都判断canRun的值（true执行，false不执行）。
+	第一次应该执行，所以设置canRun初始值为true。当第一次执行后，设置canRun为false（防止下次执行），
+	并设置计时器，以恢复canRun的值。
+	*/
+	var canRun = true;
+	window.onresize = function() {
+		console.log(1111)
+	  if (!canRun){
+	    return;
+	  }
+	  canRun = false;
+	  setTimeout(function() {
+	    console.log('节流了');
+	    canRun = true;
+	  }, 1000);
+	}
+
+
+</script>
+</html>
+
