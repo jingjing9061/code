@@ -30,26 +30,66 @@
 		//定义h
 		var h = snabbdom.h
 
-		var container = document.getElementById('container')
+		var data = [
+			{
+				name:'张三',
+				age:'22',
+				address:'北京',
+			},
+			{
+				name:'里斯',
+				age:'21',
+				address:'上海',
+			},
+			{
+				name:'王王',
+				age:'35',
+				address:'广州'
+			}
+		]
 
-		//生产vnode
-		var vnode = h('ul#list', {}, [
-			h('li.item', {}, 'Item 1'),
-			h('li.item', {}, 'Item 2')
-
-		])
-		patch(container,vnode)
-
-
-		document.getElementById('btn-change').addEventListener('click',function () {
-			//生成newVnode
-			var newVnode = h('ul#list', {}, [
-				h('li.item', {}, 'Item 1'),
-				h('li.item', {}, 'Item C'),
-				h('li.item', {}, 'Item 3')
-			])
-			patch(vnode,newVnode)
+		//把表头放在data中
+		data.unshift({
+			name:'姓名',
+			age:'年龄',
+			address:'地址'
 		})
+
+
+		var container = document.getElementById('container')
+		
+		//渲染函数
+		var vnode 
+		function render(data){
+			var newVnode = h('table', {}, data.map(function(item){
+				var tds = []
+				var i
+				for(i in item){
+					if(item.hasOwnProperty(i)){
+						tds.push(h('td', {}, item[i]+''))
+					}
+				}
+				return h('tr',{}, tds)
+			}))
+			if(vnode){
+				patch(vnode,newVnode)
+			}else {
+				patch(container,newVnode)
+			}
+			//存储当前vnode结果
+			vnode = newVnode
+		}
+
+		render(data)
+
+
+		var btnChange = document.getElementById('btn-change')
+		btnChange.addEventListener('click',function () {
+			data[1].age = 34
+			data[2].address = '朝阳'
+			render(data)
+		})
+
 
 
 
