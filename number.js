@@ -24,7 +24,7 @@ const c = Math.floor(a * 100) / 100
  *四舍五入  
  *toFixed 保留两位小数，将数值类型的数据改变成了字符串类型
  **/
-const d= a.toFixed(2)
+const d = a.toFixed(2)
 // console.log(d)//2.47
 
 
